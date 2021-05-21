@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Buscador de Archivos</string>
+    <string name="File" translatable="false">Seleccionar Archivo</string>
+    <string name="total" translatable="false">Palabras en el texto</string>
+    <string name="filename" translatable="false">Nombre del archivo:</string>
+    <string name="filter" translatable="false">Filtros</string>
+</resources>

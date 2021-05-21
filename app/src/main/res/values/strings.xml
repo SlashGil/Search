@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">FilesSearch</string>
+    <string name="app_name" translatable="false">FilesSearch</string>
     <string name="File">Select File</string>
+    <string name="total" translatable="false">"Words in Text: "</string>
+    <string name="filename" translatable="false">"Filename: "</string>
+    <string name="filter" translatable="false">Filters</string>
 </resources>

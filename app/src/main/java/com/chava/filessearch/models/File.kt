@@ -13,7 +13,7 @@ open class File(val path: String) {
             if (it.length>1){
                 val word = Word(it,1)
                 if(list.contains(word)){
-                    word.matches++
+                    word.match++
                 }
                 else{
                     list.add(word)

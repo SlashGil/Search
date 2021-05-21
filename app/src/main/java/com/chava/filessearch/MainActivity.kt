@@ -1,11 +1,13 @@
 package com.chava.filessearch
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.chava.filessearch.models.File
+import com.chava.filessearch.models.RealPathUtil.getRealPath
+import com.chava.filessearch.models.getFilePath
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textview.MaterialTextView
 
 @Suppress("DEPRECATION")
@@ -40,12 +42,12 @@ class MainActivity : AppCompatActivity() {
             type = "text/plain"
         }
         startActivityForResult(intent,PICK_FILE)
-        Snackbar.make(filters!!,file!!.path.toString(),Snackbar.LENGTH_LONG).show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(PICK_FILE==requestCode && resultCode== RESULT_OK){
-            file = data!!.data!!.path?.let { File(it) }
+            file = File(data!!.getFilePath(this@MainActivity))
+            Toast.makeText(this@MainActivity,file!!.path,Toast.LENGTH_LONG).show()
         }
         super.onActivityResult(requestCode, resultCode, data)
 

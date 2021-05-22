@@ -4,10 +4,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.chava.filessearch.Adapter.WordsAdapter
 import com.chava.filessearch.R
 import com.chava.filessearch.databinding.ActivityMainBinding
 import com.chava.filessearch.models.File
@@ -106,6 +108,14 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(this@MainActivity,binding.filters,"El archivo contiene " + file!!.words.size + " palabras identificadas!",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
                 R.color.dark_blue
             )).setTextColor(getColor(R.color.pure_light)).show()
+            binding.skeletonRV.visibility = View.VISIBLE
+            binding.searchFile.visibility = View.GONE
+            binding.skeletonRV.startLoading()
+            binding.fileName.text = "Archivo: " + data!!.data!!.lastPathSegment
+            binding.totalWords.text = "Palabras: " + file!!.words.size
+            var adapter = WordsAdapter(file!!.words.toTypedArray())
+            binding.skeletonRV.adapter = adapter
+            binding.skeletonRV.stopLoading()
         }
         super.onActivityResult(requestCode, resultCode, data)
 

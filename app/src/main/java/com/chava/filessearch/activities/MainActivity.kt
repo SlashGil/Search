@@ -1,4 +1,4 @@
-package com.chava.filessearch
+package com.chava.filessearch.activities
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.chava.filessearch.R
 import com.chava.filessearch.databinding.ActivityMainBinding
 import com.chava.filessearch.models.File
 import com.chava.filessearch.models.getFilePath
@@ -50,7 +51,9 @@ class MainActivity : AppCompatActivity() {
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
             when{
                 ContextCompat.checkSelfPermission(applicationContext,permission) == PackageManager.PERMISSION_GRANTED -> {
-                    Snackbar.make(this@MainActivity,binding.filters,"$name already is granted Thank you!",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(R.color.dark_blue)).setTextColor(getColor(R.color.pure_light)).show()
+                    Snackbar.make(this@MainActivity,binding.filters,"$name already is granted Thank you!",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
+                        R.color.dark_blue
+                    )).setTextColor(getColor(R.color.pure_light)).show()
                 }
                 shouldShowRequestPermissionRationale(permission)->showDialog(permission,name,requestCode)
                 else -> ActivityCompat.requestPermissions(this,arrayOf(permission),requestCode)
@@ -80,9 +83,13 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         fun innerCheck(name: String){
             if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED){
-                Snackbar.make(this@MainActivity,binding.filters,"$name permission refused",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(R.color.dark_blue)).setTextColor(getColor(R.color.pure_light)).show()
+                Snackbar.make(this@MainActivity,binding.filters,"$name permission refused",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
+                    R.color.dark_blue
+                )).setTextColor(getColor(R.color.pure_light)).show()
             } else {
-                Snackbar.make(this@MainActivity,binding.filters,"$name permission already granted", Snackbar.LENGTH_LONG).setBackgroundTint(getColor(R.color.dark_blue)).setTextColor(getColor(R.color.pure_light)).show()
+                Snackbar.make(this@MainActivity,binding.filters,"$name permission already granted", Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
+                    R.color.dark_blue
+                )).setTextColor(getColor(R.color.pure_light)).show()
             }
         }
 
@@ -93,8 +100,12 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(PICK_FILE==requestCode && resultCode== RESULT_OK){
             file = File(data!!.getFilePath(this@MainActivity))
-            Snackbar.make(this@MainActivity,binding.filters,file!!.path,Snackbar.LENGTH_LONG).setBackgroundTint(getColor(R.color.dark_blue)).setTextColor(getColor(R.color.pure_light)).show()
-            Snackbar.make(this@MainActivity,binding.filters,"El archivo contiene " + file!!.words.size + " palabras identificadas!",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(R.color.dark_blue)).setTextColor(getColor(R.color.pure_light)).show()
+            Snackbar.make(this@MainActivity,binding.filters,file!!.path,Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
+                R.color.dark_blue
+            )).setTextColor(getColor(R.color.pure_light)).show()
+            Snackbar.make(this@MainActivity,binding.filters,"El archivo contiene " + file!!.words.size + " palabras identificadas!",Snackbar.LENGTH_LONG).setBackgroundTint(getColor(
+                R.color.dark_blue
+            )).setTextColor(getColor(R.color.pure_light)).show()
         }
         super.onActivityResult(requestCode, resultCode, data)
 

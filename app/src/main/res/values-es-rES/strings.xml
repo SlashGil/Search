@@ -5,4 +5,6 @@
     <string name="total" translatable="false">Palabras en el Archivo:</string>
     <string name="filename" translatable="false">Nombre del Fichero:</string>
     <string name="filter" translatable="false">Filtros</string>
+    <string name="denyTitle" translatable="false">Lectura de Almacenamiento</string>
+    <string name="denyText" translatable="false">Se necesita el permiso de lectura porque sino no podemos leer el archivo</string>
 </resources>

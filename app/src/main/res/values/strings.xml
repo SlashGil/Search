@@ -4,4 +4,6 @@
     <string name="total" translatable="false">"Words in Text: "</string>
     <string name="filename" translatable="false">"Filename: "</string>
     <string name="filter" translatable="false">Filters</string>
+    <string name="denyTitle" translatable="false">Storage Permission</string>
+    <string name="denyText" translatable="false">We need storage permission for read the file that you selected</string>
 </resources>

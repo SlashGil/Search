@@ -10,10 +10,11 @@ class Word (){
     constructor(value:String,match:Int) : this() {
         val regex = Regex("[^a-z,^A-Z,^0-9]")
         if(value.isNotEmpty() && !regex.matches(value)){
+            var text: String? = ""
             points.forEach {
-                if(value.contains(it)) { value.replace(it,"") }
+                if(value.contains(it)) { text = value.replace(it,"") }
             }
-            slug = createSlug(value)
+            slug = createSlug(text!!)
             this.match = match
         }
         if(regex.matches(value) && value.isNotEmpty()){

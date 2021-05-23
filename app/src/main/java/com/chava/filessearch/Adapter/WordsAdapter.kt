@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.chava.filessearch.R
-import com.chava.filessearch.models.Word
+import com.chava.filessearch.Models.Word
 import com.google.android.material.textview.MaterialTextView
 
 class WordsAdapter(var dataSet:List<Word>): RecyclerView.Adapter<WordsAdapter.ViewHolder>()  {

@@ -1,6 +1,4 @@
 package com.chava.filessearch
-import org.junit.Test
-import com.chava.filessearch.models.File
 import org.junit.Assert.*
 
 /**

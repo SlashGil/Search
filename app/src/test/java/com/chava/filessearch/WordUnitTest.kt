@@ -1,6 +1,6 @@
 package com.chava.filessearch
 
-import com.chava.filessearch.models.Word
+import com.chava.filessearch.Models.Word
 import org.junit.Test
 
 import org.junit.Assert.*

@@ -1,4 +1,4 @@
-package com.chava.filessearch.models
+package com.chava.filessearch.Utils
 
 import android.content.ClipData
 import android.content.Context

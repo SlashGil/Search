@@ -1,4 +1,4 @@
-package com.chava.filessearch.models
+package com.chava.filessearch.Utils
 
 import android.annotation.SuppressLint
 import android.content.ContentUris

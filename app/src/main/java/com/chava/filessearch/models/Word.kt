@@ -9,6 +9,7 @@ class Word (){
     var points = arrayOf(",",".",";",":","-"," ","`","´","'","\"","(",")")
     constructor(value:String,match:Int) : this() {
         val regex = Regex("[^a-z,^A-Z,^0-9]")
+        //Looking for regex that is only able to have numbers and letters
         if(value.isNotEmpty() && !regex.matches(value)){
             var text: String? = ""
             points.forEach {

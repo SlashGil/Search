@@ -9,8 +9,8 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
         android:background="@color/dark_blue"
         app:layout_constraintBottom_toTopOf="@+id/fileName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/pure_light" />
     </com.google.android.material.appbar.MaterialToolbar>
@@ -55,22 +55,35 @@
         app:icon="@drawable/ic_baseline_filter_alt_24"
         app:layout_constraintBottom_toTopOf="@+id/skeletonRV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalWords"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.113" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/changeFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/File"
+        android:visibility="visible"
+        app:icon="@drawable/ic_baseline_folder_open_24"
+        app:layout_constraintBottom_toTopOf="@+id/skeletonRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalWords"
+        app:layout_constraintVertical_bias="0.106" />
 
     <aglibs.loading.skeleton.layout.SkeletonRecyclerView
         android:id="@+id/skeletonRV"
-        android:layout_width="365dp"
-        android:layout_height="577dp"
-        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/fileName"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/searchFile"
+        app:layout_constraintVertical_bias="0.100000024"
         tools:visibility="gone" />
 
     <com.google.android.material.button.MaterialButton

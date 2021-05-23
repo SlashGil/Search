@@ -15,6 +15,11 @@ open class File(val path: String) {
         return getWords(strings,list)
     }
 
+    /**
+     * Function for try to ensure only one attempt for every string that has singularities between various
+     * @author Salvador Romero Gil
+     * @date 22/05/2021
+     */
     private fun getWords(strings: MutableList<String>, list: MutableList<Word>): List<Word> {
          var nums = strings.groupingBy { it }.eachCount().filter { it.value > 1 }
         nums.forEach { s, i ->
@@ -24,6 +29,15 @@ open class File(val path: String) {
         return list.toList()
     }
 
+    /**
+     * Function created for performing the creation of word and try to ensure that any singular
+     * character is in string
+     *
+     * @author Salvador Romero Gil
+     * @date 22/05/2021
+     * @param txt The string that we need to check
+     * @param strings The List when we will save the slugs
+     */
     fun checkWord(txt: String,strings: MutableList<String>){
         val regex = Regex("[^a-z,^A-Z,^0-9]")
         if(regex.matches(txt)){

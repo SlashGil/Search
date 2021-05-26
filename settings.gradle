@@ -1,0 +1,2 @@
+rootProject.name = "FilesSearch"
+include ':app'

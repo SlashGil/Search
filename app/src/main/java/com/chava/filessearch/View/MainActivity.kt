@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chava.filessearch.Models.File
 import com.chava.filessearch.Models.Word
-import com.chava.filessearch.Models.getFilePath
+import com.chava.filessearch.Utils.getFilePath
 import com.chava.filessearch.R
 import com.chava.filessearch.ViewModel.FileViewModel
 import com.chava.filessearch.databinding.ActivityMainBinding
